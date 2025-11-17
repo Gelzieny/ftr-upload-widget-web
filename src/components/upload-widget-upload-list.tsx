@@ -1,0 +1,11 @@
+import { Minimize2 } from "lucide-react";
+
+export function UploadWidgetUploadList() {
+  return (
+    <div className="px-3 flex flex-col gap-3">
+      <span className="text-xs font-medium">
+        Uploaded files <span className="text-zinc-400">3</span>
+      </span>
+    </div>
+  );
+}

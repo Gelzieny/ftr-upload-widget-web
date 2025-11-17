@@ -2,4 +2,41 @@
 
 @theme {
   --font-sans: "Inter", sans-serif;
+  --opacity-2: 0.02;
+  --text-xxs: 0.625rem;
+
+  --shadow-elevated:
+    0 8px 8px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1),
+    0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  --shadow-outline:
+    0 0 0 1px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.02),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+
+  --animate-border: border 2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes border {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+/* Utility customizadas */
+@utility bg-white-opacity-2 {
+  background-color: rgba(255, 255, 255, var(--opacity-2));
+}
+
+@utility animate-border {
+  animation: var(--animate-border);
+}
+
+/* ADICIONE ISTO: CSS puro – fora dos layers do Tailwind */
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
 }
